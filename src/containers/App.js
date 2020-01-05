@@ -20,13 +20,15 @@ function App() {
     description: '',
     icon: '',
     error: '',
-  }
+  };
 
   const [weatherStat, setWeatherStat] = useState(initialFormState);
   const [hasTriedFetched, setHasTriedFetched] = useState(false);
 
   const getWeather = async (event) => {
-    event && event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
 
     const city = (event && event.target.elements.city.value) || 'Lagos';
     const country = (event && event.target.elements.country.value) || 'Nigeria';
@@ -47,19 +49,18 @@ function App() {
             pressure: data.main.pressure,
             description: data.weather[0].main,
             icon: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
-            error: ""
-          }
+            error: ''
+          };
           setWeatherStat(resp);
         } else {
-          this.setState({
-            error: "The fields are required",
-          })
+          setWeatherStat({ error: 'The fields are required' });
         }
       })
       .catch(error => {
+        // eslint-disable-next-line no-console
         console.error('Unable to fetch weather data', error);
       });
-  }
+  };
 
   useEffect(() => {
     if (!hasTriedFetched) {
@@ -70,8 +71,8 @@ function App() {
   return (
     <main className={styles.app_container}>
       <Header
+        description='Find out the temperature conditions'
         title='Weather Finder'
-        description='Find out temperature, conditions'
       />
       <section className={styles.app_content}>
         <Form getWeather={getWeather} />

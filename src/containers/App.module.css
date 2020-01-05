@@ -1,13 +1,15 @@
 :root {
-  --FuzzyWuzzyBrown: #C56B5A;
+  --Primrose: #f1eea1;
+  --Chenin: #e2de7b;
   --Parchment: #2c3e50;
   --SpringWood: #FDFCFB;
   --Black: #000;
+  --Red: #f00;
 }
 
 html,
 body {
-  background: linear-gradient(to right, #e67e22, #e74c3c);
+  background: var(--Primrose);
   box-sizing: border-box;
   color: var(--SpringWood);
   font-family: "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica, Arial, georgia, serif, sans-serif;
@@ -16,7 +18,7 @@ body {
   overflow: auto;
 }
 
-.app_container{
+.app_container {
   display: flex;
   margin: 50px auto;
   min-height: 90vh;
@@ -26,4 +28,10 @@ body {
 .app_content {
   background-color: var(--Parchment);
   padding: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  .app_container {
+    margin: 20px;
+  }
 }

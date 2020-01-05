@@ -1,6 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
 const Header = ({ title, description }) => {
@@ -11,12 +10,12 @@ const Header = ({ title, description }) => {
       </header>
       <p className={styles.header_container__description}>{description}</p>
     </section>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
-}
+};
 
 export default Header;

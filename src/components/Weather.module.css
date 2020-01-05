@@ -26,7 +26,7 @@
 }
 
 .weather__error {
-    color: #f16051;
+    color: var(--Red);
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
@@ -48,5 +48,21 @@
 }
 
 .weather_label {
-    color: var(--FuzzyWuzzyBrown);
+    color: var(--Primrose);
+}
+
+
+@media only screen and (max-width: 480px) {
+    .weather_card__wrapper {
+        display: block;
+    }
+
+    .weather__temperature {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .weather__degree {
+        font-size: 20px;
+    }
 }

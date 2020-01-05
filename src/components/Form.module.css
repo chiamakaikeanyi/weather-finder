@@ -5,7 +5,7 @@
 input[type="text"] {
     background-color: transparent;
     border: 0;
-    border-bottom: solid 1px var(--FuzzyWuzzyBrown);
+    border-bottom: solid 1px var(--Chenin);
     color: var(--SpringWood);
     font-size: 20px;
     font-weight: lighter;
@@ -15,19 +15,26 @@ input[type="text"] {
     outline: none;
     padding-bottom: 4px;
     text-transform: capitalize;
+    width: 45%;
 }
 
 button {
-    background-color: var(--FuzzyWuzzyBrown);
+    background-color: var(--Chenin);
     border: 0;
     border-radius: 2px;
-    color: var(--SpringWood);
+    color: var(--Black);
     cursor: pointer;
     font-size: 15px;
     font-weight: lighter;
     font-weight: 100;
     letter-spacing: 1px;
     margin: 0 2px;
-    outline-color: var(--FuzzyWuzzyBrown);
+    outline-color: var(--Chenin);
     padding: 8px 20px;
+}
+
+@media only screen and (max-width: 480px) {
+    input[type="text"] {
+        width: 100%;
+    }
 }

@@ -1,46 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Wind, Pressure, Humidity} from './Icon.js'
+import { Wind, Pressure, Humidity } from './Icon';
 import styles from './Weather.module.css';
 
 
-const Weather = ({ weatherStat: {
-  city,
-  country,
-  icon,
-  temperature,
-  wind,
-  humidity,
-  pressure,
-  description,
-  error
-} }) => {
+const Weather = ({
+  weatherStat: {
+    city,
+    country,
+    icon,
+    temperature,
+    wind,
+    humidity,
+    pressure,
+    description,
+    error
+  }
+}) => {
   if (error) {
     return (
       <p> <span className="weather__error">{error}</span></p>
-    )
+    );
   }
 
   const weatherInfo = [
     {
       color: '#CB5170',
-      icon: <Wind/>,
+      icon: <Wind />,
       value: `${wind} km/h`,
       label: 'Wind'
     },
     {
       color: '#AC5277',
-      icon: <Humidity/>,
+      icon: <Humidity />,
       value: `${humidity} %`,
       label: 'Humidity'
     },
     {
       color: '#AC5277',
-      icon: <Pressure/>,
+      icon: <Pressure />,
       value: `${pressure} Pa`,
       label: 'Air Pressure'
     }
-  ]
+  ];
 
   return (
     <div className={styles.weather__wrapper}>
@@ -55,11 +57,13 @@ const Weather = ({ weatherStat: {
           {city && country &&
             (<p className={styles.weather__value}>{city} {country}</p>
             )}
-            <p>{new Date().toLocaleDateString('LA-NG', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p>{new Date().toLocaleDateString('LA-NG', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}</p>
         </div>
         {icon &&
           (
-            <img src={icon} alt='weather icon' className={styles.weather__image} />
+            <img alt='weather icon'
+              className={styles.weather__image}
+              src={icon} />
           )}
       </section>
       <section className={styles.weather_card__wrapper}>
@@ -68,38 +72,35 @@ const Weather = ({ weatherStat: {
           humidity &&
           pressure &&
           weatherInfo &&
-          weatherInfo.map((info, index) => (
-            <div className={styles.weather_card}>
+          weatherInfo.map(info => (
+            <div className={styles.weather_card}
+              key={info.label}>
               <p className={styles.weather_icon}>
                 {info.icon}
               </p>
               <p className={styles.weather_value}>{info.value}</p>
-              <label className={styles.weather_label}>{info.label}</label>
+              <p className={styles.weather_label}>{info.label}</p>
             </div>
           ))
         }
 
       </section>
     </div>
-  )
-}
-
-Weather.defaultProps = {
-  city: '',
-  country: '',
-  temperature: '',
-  humidity: '',
-  description: '',
-  error: '',
-}
+  );
+};
 
 Weather.propTypes = {
-  city: PropTypes.string,
-  country: PropTypes.string,
-  temperature: PropTypes.string,
-  humidity: PropTypes.string,
-  description: PropTypes.string,
-  error: PropTypes.string,
-}
+  weatherStat: PropTypes.shape({
+    city: PropTypes.string,
+    country: PropTypes.string,
+    icon: PropTypes.node,
+    temperature: PropTypes.string,
+    wind: PropTypes.string,
+    humidity: PropTypes.string,
+    pressure: PropTypes.string,
+    description: PropTypes.string,
+    error: PropTypes.string,
+  }).isRequired
+};
 
 export default Weather;
