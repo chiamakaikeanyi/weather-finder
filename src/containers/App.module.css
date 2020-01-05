@@ -1,0 +1,29 @@
+:root {
+  --FuzzyWuzzyBrown: #C56B5A;
+  --Parchment: #2c3e50;
+  --SpringWood: #FDFCFB;
+  --Black: #000;
+}
+
+html,
+body {
+  background: linear-gradient(to right, #e67e22, #e74c3c);
+  box-sizing: border-box;
+  color: var(--SpringWood);
+  font-family: "Helvetica Neue", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica, Arial, georgia, serif, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
+}
+
+.app_container{
+  display: flex;
+  margin: 50px auto;
+  min-height: 90vh;
+  width: 80%;
+}
+
+.app_content {
+  background-color: var(--Parchment);
+  padding: 20px;
+}

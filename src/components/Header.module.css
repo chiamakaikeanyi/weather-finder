@@ -1,0 +1,19 @@
+.container {
+    background: center / cover no-repeat url('../img/background.jpg');
+    color: var(--Black);
+    padding: 20px;
+}
+
+.header_container__title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    line-height: 1.3;
+}
+
+.header_container__description {
+    font-family: "Roboto", serif;
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 1px;
+}

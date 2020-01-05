@@ -1,0 +1,52 @@
+.weather__wrapper {
+    padding: 20px;
+}
+
+.weather_info__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather__temperature {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.weather__degree {
+    font-size: 40px;
+}
+
+.weather__description {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.weather__image {
+    height: 100px;
+}
+
+.weather__error {
+    color: #f16051;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.weather_card__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.weather_icon {
+    width: 30px;
+}
+
+.weather_value {
+    font-weight: 600;
+}
+
+.weather_label {
+    color: var(--FuzzyWuzzyBrown);
+}
