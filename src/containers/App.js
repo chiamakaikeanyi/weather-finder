@@ -13,13 +13,13 @@ function App() {
   const initialFormState = {
     city: '',
     country: '',
-    temperature: '',
-    wind: '',
-    humidity: '',
-    pressure: '',
     description: '',
-    icon: '',
     error: '',
+    humidity: 0,
+    icon: '',
+    pressure: 0,
+    temperature: 0,
+    wind: 0,
   };
 
   const [weatherStat, setWeatherStat] = useState(initialFormState);

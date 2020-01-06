@@ -8,12 +8,12 @@
 }
 
 .weather__temperature {
-    font-size: 80px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
 .weather__degree {
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .weather__description {
@@ -33,10 +33,12 @@
 }
 
 .weather_card__wrapper {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+    display: block;
     margin-top: 50px;
+}
+
+.weather_card {
+    margin: 50px auto;
 }
 
 .weather_icon {
@@ -51,18 +53,23 @@
     color: var(--Primrose);
 }
 
-
-@media only screen and (max-width: 480px) {
+@media (min-width: 640px) {
     .weather_card__wrapper {
-        display: block;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .weather_card {
+        margin: auto;
     }
 
     .weather__temperature {
-        font-size: 40px;
+        font-size: 80px;
         margin-bottom: 20px;
     }
 
     .weather__degree {
-        font-size: 20px;
+        font-size: 40px;
     }
 }

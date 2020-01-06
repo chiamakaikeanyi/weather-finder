@@ -1,8 +1,5 @@
 .container {
-    background: center / cover no-repeat url('../img/background.jpg');
-    color: var(--Black);
-    padding: 20px;
-    width: 50%;
+    display: none;
 }
 
 .header_container__title {
@@ -19,8 +16,12 @@
     letter-spacing: 1px;
 }
 
-@media only screen and (max-width: 480px) {
+@media (min-width: 640px) {
     .container {
-        display: none;
+        background: center / cover no-repeat url('../img/background.jpg');
+        color: var(--Black);
+        display: block;
+        padding: 20px;
+        width: 50%;
     }
 }

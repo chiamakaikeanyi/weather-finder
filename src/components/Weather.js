@@ -8,13 +8,13 @@ const Weather = ({
   weatherStat: {
     city,
     country,
+    description,
+    error,
+    humidity,
     icon,
+    pressure,
     temperature,
     wind,
-    humidity,
-    pressure,
-    description,
-    error
   }
 }) => {
   if (error) {
@@ -25,19 +25,16 @@ const Weather = ({
 
   const weatherInfo = [
     {
-      color: '#CB5170',
       icon: <Wind />,
       value: `${wind} km/h`,
       label: 'Wind'
     },
     {
-      color: '#AC5277',
       icon: <Humidity />,
       value: `${humidity} %`,
       label: 'Humidity'
     },
     {
-      color: '#AC5277',
       icon: <Pressure />,
       value: `${pressure} Pa`,
       label: 'Air Pressure'
@@ -93,13 +90,13 @@ Weather.propTypes = {
   weatherStat: PropTypes.shape({
     city: PropTypes.string,
     country: PropTypes.string,
-    icon: PropTypes.node,
-    temperature: PropTypes.string,
-    wind: PropTypes.string,
-    humidity: PropTypes.string,
-    pressure: PropTypes.string,
     description: PropTypes.string,
     error: PropTypes.string,
+    humidity: PropTypes.number,
+    icon: PropTypes.string,
+    pressure: PropTypes.number,
+    temperature: PropTypes.number,
+    wind: PropTypes.number,
   }).isRequired
 };
 
