@@ -10,10 +10,13 @@ const Weather = ({
     country,
     description,
     error,
+    feels_like: feelsLike,
     humidity,
     icon,
     pressure,
     temperature,
+    temp_min: tempMin,
+    temp_max: tempMax,
     wind,
   }
 }) => {
@@ -48,13 +51,19 @@ const Weather = ({
           {temperature &&
             (<p className={styles.weather__temperature}>{temperature}<sup className={styles.weather__degree}> o</sup></p>
             )}
+          <p className={styles.weather__temperature_min}>
+            {Math.round(tempMin)}<sup className={styles.weather__min_degree}>o</sup> / {Math.round(tempMax)}<sup className={styles.weather__min_degree}>o</sup>
+            &nbsp;
+            Feels like {Math.round(feelsLike)}<sup className={styles.weather__min_degree}>o</sup>
+          </p>
+
           {description &&
             (<p className={styles.weather__description}>{description}</p>
             )}
           {city && country &&
             (<p className={styles.weather__value}>{city} {country}</p>
             )}
-          <p>{new Date().toLocaleDateString('LA-NG', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p>{new Date().toLocaleDateString('LA-NG', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', time: 'numeric' })} {new Date().toLocaleTimeString('en-US')}</p>
         </div>
         {icon &&
           (
@@ -92,10 +101,13 @@ Weather.propTypes = {
     country: PropTypes.string,
     description: PropTypes.string,
     error: PropTypes.string,
+    feels_like: PropTypes.number,
     humidity: PropTypes.number,
     icon: PropTypes.string,
     pressure: PropTypes.number,
     temperature: PropTypes.number,
+    temp_min: PropTypes.number,
+    temp_max: PropTypes.number,
     wind: PropTypes.number,
   }).isRequired
 };

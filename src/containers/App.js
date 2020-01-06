@@ -15,10 +15,13 @@ function App() {
     country: '',
     description: '',
     error: '',
+    feels_like: 0,
     humidity: 0,
     icon: '',
     pressure: 0,
     temperature: 0,
+    temp_min: 0,
+    temp_max: 0,
     wind: 0,
   };
 
@@ -41,15 +44,18 @@ function App() {
 
         if (city && country) {
           const resp = {
-            temperature: data.main.temp,
             city: data.name,
             country: data.sys.country,
-            wind: data.wind.speed,
-            humidity: data.main.humidity,
-            pressure: data.main.pressure,
             description: data.weather[0].main,
+            error: '',
+            feels_like: data.main.feels_like,
+            humidity: data.main.humidity,
             icon: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
-            error: ''
+            pressure: data.main.pressure,
+            temperature: data.main.temp,
+            temp_min: data.main.temp_min,
+            temp_max: data.main.temp_max,
+            wind: data.wind.speed
           };
           setWeatherStat(resp);
         } else {
