@@ -1,7 +1,3 @@
-.weather__wrapper {
-    padding: 20px;
-}
-
 .weather_info__wrapper {
     display: flex;
     justify-content: space-between;
@@ -33,12 +29,13 @@
 }
 
 .weather_card__wrapper {
-    display: block;
-    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .weather_card {
-    margin: 50px auto;
+    margin: 50px 0;
 }
 
 .weather_icon {
@@ -54,14 +51,16 @@
 }
 
 @media (min-width: 640px) {
+    .weather__wrapper {
+        padding: 20px;
+    }
+
     .weather_card__wrapper {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
+        margin-top: 50px;
     }
 
     .weather_card {
-        margin: auto;
+        margin: auto 0;
     }
 
     .weather__temperature {
